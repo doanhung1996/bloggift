@@ -6,6 +6,7 @@ use App\Domain\Admin\Models\Admin;
 use App\Support\ValuesStore\Setting;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 use Spatie\Flash\Flash;
 
@@ -47,5 +48,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(Setting::class, function () {
             return Setting::make(storage_path('app/settings.json'));
         });
+
+        URL::forceScheme('https');
     }
 }
