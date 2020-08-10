@@ -4,12 +4,12 @@
     <main>
         <div class="container">
             <div class="sh-content-head">
-                Đây là trang Blog cá nhân của Hùng !
+                Đây là trang Blog !
             </div>
             <div class="sh-section__wrap row" id="list-post">
                 @if($posts->count() == 0)
                     <div class="text-center col-12">
-                        <p>Chưa có bài viết nào ^_^ !</p>
+                        <p>Không có bài viết nào ^_^ !</p>
                     </div>
                 @else
                     @foreach($posts as $post)
