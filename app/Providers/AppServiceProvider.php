@@ -49,6 +49,6 @@ class AppServiceProvider extends ServiceProvider
             return Setting::make(storage_path('app/settings.json'));
         });
 
-        URL::forceScheme('https');
+//        URL::forceScheme('https');
     }
 }
