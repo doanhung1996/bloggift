@@ -7,7 +7,7 @@
     <meta name="keywords" content="HTML5 Template">
     <meta name="description" content="Sharehub - Responsive HTML5 Template">
     <meta name="author" content="SH">
-    <title>Hung Blog</title>
+    <title>Marketing Studies</title>
 
     <link href="https://fonts.googleapis.com/css?family=Signika:300,400,600,700" rel="stylesheet">
 
