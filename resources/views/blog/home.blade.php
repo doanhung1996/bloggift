@@ -59,7 +59,7 @@
                                     <div class="sh-section__content">
                                         <small>{{ $post->description }}</small>
                                         <div class="sh-section__content">
-                                            <p>{{ $post->text }}</p>
+                                            <p>{!! $post->text !!}</p>
                                         </div>
                                     </div>
                                     <div class="sh-section__footer">

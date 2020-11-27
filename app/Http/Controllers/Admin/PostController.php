@@ -66,6 +66,13 @@ class PostController
     {
         $this->authorize('update', $post);
 
+        if ($request->hasFile('image')) {
+            $post->addMedia($request->image)->toMediaCollection('image');
+        }
+        if ($request->hasFile('file')) {
+            $post->addMedia($request->file)->toMediaCollection('file');
+        }
+
         $post->update($request->except(['category', 'file', 'image']));
         $post->taxons()->sync($request->input('category'));
 
