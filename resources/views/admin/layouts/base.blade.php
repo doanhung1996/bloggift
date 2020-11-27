@@ -36,7 +36,7 @@
         dateFormat: 'd-m-Y H:i',
         baseUrl: '{{ url('/') }}',
         version: '{{ config('ecc.app_version') }}',
-        adminPrefix: '/admin',
+        adminPrefix: '/manager',
         csrf: '{{ csrf_token() }}'
     }
 
