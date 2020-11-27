@@ -11,7 +11,7 @@
                     <a href="{{ $post->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                 </div>
                 <div class="sh-section__content">
-                    <small>{{ $post->description }}</small>
+{{--                    <small>{{ $post->description }}</small>--}}
                     <div class="sh-section__media sh-video">
                         <div class="sh-video__player">
                             <iframe width="100%" height="390px" src="{{ $post->video }}"
@@ -43,7 +43,7 @@
                     <a href="{{ $post->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                 </div>
                 <div class="sh-section__content">
-                    <small>{{ $post->description }}</small>
+{{--                    <small>{{ $post->description }}</small>--}}
                     <div class="sh-section__content">
                         <p>{{ $post->text }}</p>
                     </div>
@@ -64,7 +64,7 @@
                     <a href="{{ $post->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                 </div>
                 <div class="sh-section__content">
-                    <small>{{ $post->description }}</small>
+{{--                    <small>{{ $post->description }}</small>--}}
                     <div class="sh-section__image">
                         <a href="{{ $post->url() }}"><img src="{{ $post->getFirstMediaUrl('image') ?? '/admin/global_assets/images/placeholders/placeholder.jpg' }}" alt=""></a>
                     </div>
@@ -85,7 +85,7 @@
                     <a href="{{ $post->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                 </div>
                 <div class="sh-section__content">
-                    <small>{{ $post->description }}</small>
+{{--                    <small>{{ $post->description }}</small>--}}
                     <p>{{ $post->getFirstMediaUrl('file') }}</p>
                 </div>
                 <div class="sh-section__footer">

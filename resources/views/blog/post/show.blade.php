@@ -17,7 +17,7 @@
                             <a href="#" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                         </div>
                         <div class="sh-section__content">
-                            <p>{{ $post->description }}</p>
+{{--                            <p>{{ $post->description }}</p>--}}
                             <div style="padding-top: 15px">
                                 {!! $post->body !!}
                             </div>
@@ -39,7 +39,7 @@
                                         <a href="{{ $postNew->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                                     </div>
                                     <div class="sh-section__content">
-                                        <small>{!! $postNew->description !!}</small>
+{{--                                        <small>{!! $postNew->description !!}</small>--}}
                                         <div class="sh-section__media sh-video">
                                             <div class="sh-video__player">
                                                 <iframe width="100%" height="300px" src="{{ $postNew->video }}"
@@ -69,7 +69,7 @@
                                         <a href="{{ $postNew->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                                     </div>
                                     <div class="sh-section__content">
-                                        <small>{{ $postNew->description }}</small>
+{{--                                        <small>{{ $postNew->description }}</small>--}}
                                         <div class="sh-section__content">
                                             <p>{!! $postNew->text !!}</p>
                                         </div>
@@ -88,7 +88,7 @@
                                         <a href="{{ $postNew->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                                     </div>
                                     <div class="sh-section__content">
-                                        <small>{{ $postNew->description }}</small>
+{{--                                        <small>{{ $postNew->description }}</small>--}}
                                         <div class="sh-section__image">
                                             <a href="{{ $postNew->url() }}"><img src="{{ $postNew->getFirstMediaUrl('image') ?? '/admin/global_assets/images/placeholders/placeholder.jpg' }}" alt=""></a>
                                         </div>
@@ -107,7 +107,7 @@
                                         <a href="{{ $postNew->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                                     </div>
                                     <div class="sh-section__content">
-                                        <small>{{ $postNew->description }}</small>
+{{--                                        <small>{{ $postNew->description }}</small>--}}
                                         <p>{{ $postNew->getFirstMediaUrl('file') }}</p>
                                     </div>
                                     <div class="sh-section__footer">

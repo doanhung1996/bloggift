@@ -26,15 +26,15 @@
                                 >
                                 </x-text-field>
 
-                                <x-text-field
-                                    name="description"
-                                    :placeholder="__('Mô tả')"
-                                    :label="__('Mô tả')"
-                                    :value="$post->description"
-                                    required
-                                >
-                                    {!! $post->description ?? null !!}
-                                </x-text-field>
+{{--                                <x-text-field--}}
+{{--                                    name="description"--}}
+{{--                                    :placeholder="__('Mô tả')"--}}
+{{--                                    :label="__('Mô tả')"--}}
+{{--                                    :value="$post->description"--}}
+{{--                                    required--}}
+{{--                                >--}}
+{{--                                    {!! $post->description ?? null !!}--}}
+{{--                                </x-text-field>--}}
 
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label text-lg-right">
