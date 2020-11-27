@@ -67,6 +67,6 @@ tinyMCE.init({
     directionality: direction,
     cache_suffix: `?v=1`,
     plugins: 'lists, link, table, paste, autosave, autolink, wordcount, code, image, fullscreen',
-    toolbar: 'styleselect bold italic underline | bullist numlist | alignleft aligncenter alignright | outdent indent | link table code image fullscreen',
+    toolbar: 'styleselect bold italic underline | bullist numlist | alignleft aligncenter alignright alignjustify | outdent indent | link table code image fullscreen',
     language_url : langURl
 });
