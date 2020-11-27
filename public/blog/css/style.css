@@ -8768,3 +8768,8 @@ select.form-control:focus {
 .sh-footer__btn-add-image:hover i {
   color: #ffffff !important;
 }
+
+.sh-section__content p {
+    margin: 10px 0px !important;
+    line-height: 22px !important;
+}
