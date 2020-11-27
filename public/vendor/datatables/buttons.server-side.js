@@ -277,7 +277,7 @@
 
             var bulkUrl = window.location.href.replace(/\/+$/, "") + '/bulk-delete';
 
-            confirmAction('Do you really want to delete selected record(s)?', function (result) {
+            confirmAction('Bạn có thực sự muốn xóa (các) bản ghi đã chọn không ?', function (result) {
                 if (result) {
                     $.ajax({
                         type: 'POST',

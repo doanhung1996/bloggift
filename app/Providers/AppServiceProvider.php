@@ -43,6 +43,7 @@ class AppServiceProvider extends ServiceProvider
         Blade::component('admin.components.selectField', 'select-field');
         Blade::component('admin.components.textareaField', 'textarea-field');
         Blade::component('admin.components.pageHeader', 'page-header');
+        Blade::component('admin.components.checkField', 'check-field');
         Blade::component('admin.components.card', 'card');
 
         $this->app->singleton(Setting::class, function () {

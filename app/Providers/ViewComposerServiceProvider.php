@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use App\Composers\CurrentUserComposer;
+use App\Composers\PageComposer;
 use App\Composers\TaxonComposer;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Factory;
@@ -29,6 +30,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function boot(Factory $factory): void
     {
         $factory->composer('admin.*', CurrentUserComposer::class);
-        $factory->composer('blog.*', TaxonComposer::class);
+        $factory->composer('layouts.*', TaxonComposer::class);
+        $factory->composer('layouts.*', PageComposer::class);
     }
 }

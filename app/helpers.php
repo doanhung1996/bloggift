@@ -3,6 +3,7 @@
 use App\Support\ValuesStore\Setting;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Auth;
 
 if (! function_exists('array_reset_index')) {
     /**
@@ -69,3 +70,18 @@ function formatNumber($value)
 {
     return number_format($value);
 }
+
+if (! function_exists('currentUser')) {
+    function currentUser()
+    {
+        return Auth::guard('web')->user();
+    }
+}
+
+if (! function_exists('currentAdmin')) {
+    function currentAdmin()
+    {
+        return Auth::guard('admins')->user();
+    }
+}
+

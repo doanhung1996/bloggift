@@ -36,8 +36,8 @@
     <div class="sh-header">
         <div class="container">
             <a href="{{ route('home') }}" class="sh-logo">
-                <img src="/blog/fonts/icons/sharehub/svg/Sharehub.svg" alt="">
-                <img src="/blog/fonts/icons/sharehub/svg/Sharehub-invert.svg" alt="">
+                <img src="/blog/images/logo.png" alt="">
+                <img src="/blog/images/logo.png" alt="">
             </a>
             <script>
                 require(['app'], function () {
@@ -46,6 +46,14 @@
             </script>
             <nav>
                 <ul class="sh-header__menu">
+                    <li class="active"><a href="/">Trang chủ</a></li>
+                    @if($pageTaxons->isNotEmpty())
+                        @foreach($pageTaxons as $page)
+                            <li class="active">
+                                <a href="{{ $page->urlPage() }}">{{ $page->title }}</a>
+                            </li>
+                        @endforeach
+                    @endif
                     @if($menuTaxons->isNotEmpty())
                         @foreach($menuTaxons as $taxon)
                             <li class="active">

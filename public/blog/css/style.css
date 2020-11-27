@@ -8604,7 +8604,7 @@ select.form-control:focus {
 }
 @media only screen and (min-width: 1484px) {
   .sh-header__search label input {
-    width: 432px;
+    width: 300px;
   }
 }
 @media only screen and (max-width: 1483px) and (min-width: 769px) {

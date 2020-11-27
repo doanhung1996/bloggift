@@ -2,6 +2,7 @@
 
 namespace App\Composers;
 
+use App\Domain\Page\Models\Page;
 use App\Domain\Taxonomy\Models\Taxon;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\View\View;
@@ -27,7 +28,8 @@ class TaxonComposer
                     }]);
                 }])->get();
         });
-
+        $pages = Page::where('status', 1)->get();
         $view->withMenuTaxons($taxons);
+        $view->withPageTaxons($pages);
     }
 }

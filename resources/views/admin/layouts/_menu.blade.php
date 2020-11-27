@@ -81,6 +81,14 @@
                     <a href="{{ route('admin.taxonomies.index') }}" class="nav-link {{ request()->routeIs('admin.taxonomies*') ? 'active' : null }}"><i class="icon-cube"></i> <span>{{ __('Danh mục') }}</span></a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('admin.pages.index') }}" class="nav-link @if(request()->routeIs('admin.pages*'))active @endif">
+                        <i class="icon-pagebreak"></i>
+                        <span>
+                        Trang
+                    </span>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('admin.posts.index') }}" class="nav-link {{ request()->routeIs('admin.posts*') ? 'active' : null }}">
                         <i class="icon-book"></i>
                         <span>

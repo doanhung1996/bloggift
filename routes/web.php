@@ -23,3 +23,5 @@ Route::get('/posts','PostController@index')->name('post.index');
 Route::get('/posts/{post:slug}', 'PostController@show')->name('post.show');
 Route::get('/posts/load/more/home', 'HomeController@loadMore')->name('post.load.more.home');
 Route::get('/posts/load/more/post/{slug}', 'PostController@loadMore')->name('post.load.more.post');
+
+Route::get('/page/{page:slug}', 'PageController@show')->name('page.show');

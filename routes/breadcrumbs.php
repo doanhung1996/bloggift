@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\Domain\Acl\Models\Role;
 use App\Domain\Admin\Models\Admin;
 use App\Domain\Option\Models\OptionType;
+use App\Domain\Page\Models\Page;
 use App\Domain\Post\Models\Post;
 use App\Domain\Taxonomy\Models\Taxon;
 use App\Domain\Taxonomy\Models\Taxonomy;
@@ -119,4 +120,29 @@ Breadcrumbs::for('admin.roles.edit', function (BreadcrumbsGenerator $trail, Role
     $trail->parent('admin.roles.index');
     $trail->push($role->display_name, '#');
     $trail->push(__('Edit'), route('admin.roles.edit', $role));
+});
+
+// Home > Pages
+Breadcrumbs::for('admin.pages.index', function (BreadcrumbsGenerator $trail) {
+    $trail->parent('admin.dashboard');
+    $trail->push(__('Pages'), route('admin.pages.index'), ['icon' => 'icon-people']);
+});
+
+// Home > Pages > Create
+
+Breadcrumbs::for('admin.pages.create', function (BreadcrumbsGenerator $trail) {
+    $trail->parent('admin.pages.index');
+    $trail->push(__('Create'), route('admin.pages.create'));
+});
+
+// Home > Admins > [admin] > Edit
+Breadcrumbs::for('admin.pages.edit', function (BreadcrumbsGenerator $trail, Page $page) {
+    $trail->parent('admin.pages.index');
+    $trail->push(__('Edit'), route('admin.pages.edit', $page));
+});
+
+// Home > Admins > [admin] > Update
+Breadcrumbs::for('admin.pages.update', function (BreadcrumbsGenerator $trail, Page $page) {
+    $trail->parent('admin.pages.index');
+    $trail->push(__('Update'), route('admin.pages.update', $page));
 });

@@ -23,6 +23,7 @@ use App\Http\Controllers\Admin\Auth\VerificationController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\MostVisitedPageController;
 use App\Http\Controllers\Admin\OptionTypeController;
+use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\TaxonController;
 use App\Http\Controllers\Admin\TaxonomyController;
@@ -109,6 +110,15 @@ Route::prefix('manager')->name('admin.')->group(function () {
             Route::get('/analytics', AnalyticsController::class)->name('analytics');
             Route::get('/top-referrers', TopReferrerController::class)->name('top-referrers');
             Route::get('/most-visited-pages', MostVisitedPageController::class)->name('most-visited-pages');
+            // Page Routes...
+            Route::post('/pages/bulk-delete', [PageController::class, 'bulkDelete'])->name('pages.bulk-delete');
+            Route::get('/pages', [PageController::class, 'index'])->name('pages.index');
+            Route::get('/pages/create', [PageController::class, 'create'])->name('pages.create');
+            Route::post('/pages', [PageController::class, 'store'])->name('pages.store');
+            Route::get('/pages/{page}/edit', [PageController::class, 'edit'])->name('pages.edit');
+            Route::delete('/pages/{page}', [PageController::class, 'destroy'])->name('pages.destroy');
+            Route::put('/pages/{page}', [PageController::class, 'update'])->name('pages.update');
+            Route::post('/pages/{page}/status', [PageController::class, 'changeStatus'])->name('pages.change.status');
 
             // POST
             Route::post('/posts/bulk-delete', [PostController::class, 'bulkDelete'])->name('posts.bulk-delete');
