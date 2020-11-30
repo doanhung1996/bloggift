@@ -94,6 +94,7 @@
             require(['modules/upload']);
         });
     </script>
+    @stack('styles')
 </header>
 <script>
     /*----------------------------------------*/
