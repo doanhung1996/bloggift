@@ -7231,8 +7231,8 @@ select.form-control:focus {
   font-size: 24px;
 }
 .sh-section__content {
-  padding-top: 24px;
-  padding-bottom: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .sh-section__content > p {
   font-size: 18px;
