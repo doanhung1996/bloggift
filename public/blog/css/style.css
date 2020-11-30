@@ -6613,8 +6613,8 @@ select.form-control:focus {
 }
 .sh-logo {
   display: inline-block;
-  width: 46px;
-  height: 42px;
+  width: 65px;
+  height: auto;
 }
 .sh-logo img {
   max-width: 100%;
@@ -8458,8 +8458,8 @@ select.form-control:focus {
 }
 .sh-header {
   position: relative;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   background-color: #ffffff;
   border-bottom: solid 1px #e5e9ec;
   z-index: 100000;
