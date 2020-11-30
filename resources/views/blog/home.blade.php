@@ -4,7 +4,7 @@
     <main>
         <div class="container">
             <div class="sh-content-head">
-                Đây là trang Blog về Marketing.
+                Đây là trang nhà của Ltr Nguyễn Hoàng Phương.
             </div>
             <div class="sh-section__wrap row" id="list-post">
                 @if($posts->count() == 0)

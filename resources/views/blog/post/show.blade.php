@@ -1,5 +1,11 @@
 @extends('layouts.app')
-
+@push('styles')
+    <style>
+        .sh-section__head{
+            padding-bottom: 10px;
+        }
+    </style>
+@endpush
 @section('content')
     <main>
         <div class="container">
@@ -18,7 +24,7 @@
                         </div>
                         <div class="sh-section__content">
 {{--                            <p>{{ $post->description }}</p>--}}
-                            <div style="padding-top: 15px">
+                            <div>
                                 {!! $post->body !!}
                             </div>
                         </div>
