@@ -7190,7 +7190,8 @@ select.form-control:focus {
 .sh-section__wrap.sh-section__isotope-init {
   visibility: visible;
 }
-.sh-section__head {
+.sh-section__head,
+.sh-section__content {
   border-bottom: solid 1px #f3f3f3;
 }
 .sh-section__head {
