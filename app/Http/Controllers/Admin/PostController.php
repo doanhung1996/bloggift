@@ -8,6 +8,7 @@ use App\DataTables\PostDataTable;
 use App\Domain\Post\Models\Post;
 use App\Http\Requests\Admin\PostBulkDeleteRequest;
 use App\Http\Requests\Admin\PostStoreRequest;
+use App\Http\Requests\Admin\PostUpdateRequest;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -62,7 +63,7 @@ class PostController
         return view('admin.posts.edit', compact('post'));
     }
 
-    public function update(Post $post, PostStoreRequest $request)
+    public function update(Post $post, PostUpdateRequest $request)
     {
         $this->authorize('update', $post);
 

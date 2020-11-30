@@ -41,7 +41,7 @@
                                         </script>
                                     </div>
                                     <div class="sh-section__footer">
-                                        <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">  {{ $post->view }}</i></a>
+                                        <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">{{ $post->view }}</i></a>
                                     </div>
                                 </div>
                             </div>
@@ -56,7 +56,10 @@
                                         <a href="{{ $post->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                                     </div>
                                     <div class="sh-section__content">
-                                        <p>{!! $post->text !!}</p>
+                                        <div class="sh-section__image">
+                                            <a href="{{ $post->url() }}"><img src="{{ $post->getFirstMediaUrl('image') ?? '/admin/global_assets/images/placeholders/placeholder.jpg' }}" alt=""></a>
+                                        </div>
+                                        <div>{!! $post->text !!}</div>
                                     </div>
                                     <div class="sh-section__footer">
                                         <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">  {{ $post->view }}</i></a>
@@ -94,6 +97,9 @@
                                         <a href="{{ $post->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                                     </div>
                                     <div class="sh-section__content">
+                                        <div class="sh-section__image">
+                                            <a href="{{ $post->url() }}"><img src="{{ $post->getFirstMediaUrl('image') ?? '/admin/global_assets/images/placeholders/placeholder.jpg' }}" alt=""></a>
+                                        </div>
                                         <p>{{ $post->getFirstMediaUrl('file') }}</p>
                                     </div>
                                     <div class="sh-section__footer">

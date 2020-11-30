@@ -56,6 +56,9 @@
                                         <a href="{{ $post->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                                     </div>
                                     <div class="sh-section__content">
+                                        <div class="sh-section__image">
+                                            <a href="{{ $post->url() }}"><img src="{{ $post->getFirstMediaUrl('image') ?? '/admin/global_assets/images/placeholders/placeholder.jpg' }}" alt=""></a>
+                                        </div>
                                         <div>{!! $post->text !!}</div>
                                     </div>
                                     <div class="sh-section__footer">
@@ -94,6 +97,9 @@
                                         <a href="{{ $post->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                                     </div>
                                     <div class="sh-section__content">
+                                        <div class="sh-section__image">
+                                            <a href="{{ $post->url() }}"><img src="{{ $post->getFirstMediaUrl('image') ?? '/admin/global_assets/images/placeholders/placeholder.jpg' }}" alt=""></a>
+                                        </div>
                                         <p>{{ $post->getFirstMediaUrl('file') }}</p>
                                     </div>
                                     <div class="sh-section__footer">

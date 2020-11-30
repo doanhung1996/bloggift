@@ -6,14 +6,13 @@ namespace App\Http\Requests\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PostStoreRequest extends FormRequest
+class PostUpdateRequest extends FormRequest
 {
     public function rules(): array
     {
         return [
             'title' => ['required', 'string', 'max:255'],
             'status' => ['required'],
-            'image' => ['required'],
             'type' => ['required'],
             'text' => ['required_if:type,text'],
             'video' => ['required_if:type,video'],

@@ -35,6 +35,25 @@
 {{--                                >--}}
 {{--                                    {!! $post->description ?? null !!}--}}
 {{--                                </x-text-field>--}}
+                                <div>
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label text-right" for="image">
+                                            <span class="text-danger">*</span>
+                                            {{ __("Ảnh") }} :
+                                        </label>
+                                        <div class="col-lg-9">
+                                            <div class="card-img-actions d-inline-block mb-3">
+                                                <img class="img-fluid rounded-circle" src="{{ $post->getFirstMediaUrl('image') ?? '/admin/global_assets/images/placeholders/placeholder.jpg'}}" width="170" height="170" alt="" id="image-preview">
+                                                <div class="card-img-actions-overlay rounded-circle">
+                                                    <a href="javascript:void(0)" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round ml-2 legitRipple select-file" data-input="#image">
+                                                        <i class="icon-link"></i>
+                                                    </a>
+                                                    <input type="file" class="d-none" name="image" id="image" data-preview="#image-preview">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="form-group row">
                                     <label class="col-lg-3 col-form-label text-lg-right">
@@ -95,25 +114,25 @@
                                     >
                                     </x-text-field>
                                 </div>
-                                <div id="image-input" style="display: none;">
-                                    <div class="form-group row">
-                                        <label class="col-lg-3 col-form-label text-right" for="image">
-                                            <span class="text-danger">*</span>
-                                            {{ __("Ảnh") }} :
-                                        </label>
-                                        <div class="col-lg-9">
-                                            <div class="card-img-actions d-inline-block mb-3">
-                                                <img class="img-fluid rounded-circle" src="{{ $post->getFirstMediaUrl('image') ?? '/admin/global_assets/images/placeholders/placeholder.jpg'}}" width="170" height="170" alt="" id="image-preview">
-                                                <div class="card-img-actions-overlay rounded-circle">
-                                                    <a href="javascript:void(0)" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round ml-2 legitRipple select-file" data-input="#image">
-                                                        <i class="icon-link"></i>
-                                                    </a>
-                                                    <input type="file" class="d-none" name="image" id="image" data-preview="#image-preview">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+{{--                                <div id="image-input" style="display: none;">--}}
+{{--                                    <div class="form-group row">--}}
+{{--                                        <label class="col-lg-3 col-form-label text-right" for="image">--}}
+{{--                                            <span class="text-danger">*</span>--}}
+{{--                                            {{ __("Ảnh") }} :--}}
+{{--                                        </label>--}}
+{{--                                        <div class="col-lg-9">--}}
+{{--                                            <div class="card-img-actions d-inline-block mb-3">--}}
+{{--                                                <img class="img-fluid rounded-circle" src="{{ $post->getFirstMediaUrl('image') ?? '/admin/global_assets/images/placeholders/placeholder.jpg'}}" width="170" height="170" alt="" id="image-preview">--}}
+{{--                                                <div class="card-img-actions-overlay rounded-circle">--}}
+{{--                                                    <a href="javascript:void(0)" class="btn btn-outline bg-white text-white border-white border-2 btn-icon rounded-round ml-2 legitRipple select-file" data-input="#image">--}}
+{{--                                                        <i class="icon-link"></i>--}}
+{{--                                                    </a>--}}
+{{--                                                    <input type="file" class="d-none" name="image" id="image" data-preview="#image-preview">--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
 
                                 <div id="file-input" style="display: none;">
                                     <div class="form-group row">
