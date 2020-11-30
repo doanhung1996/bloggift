@@ -7190,12 +7190,10 @@ select.form-control:focus {
 .sh-section__wrap.sh-section__isotope-init {
   visibility: visible;
 }
-.sh-section__head,
-.sh-section__content {
+.sh-section__head {
   border-bottom: solid 1px #f3f3f3;
 }
 .sh-section__head {
-  padding-bottom: 30px;
   align-items: center;
   display: -moz-box;
   display: -ms-flexbox;
