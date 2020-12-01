@@ -130,6 +130,8 @@ Route::prefix('manager')->name('admin.')->group(function () {
             Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
             Route::post('/posts/{post}/status', [PostController::class, 'changeStatus'])->name('posts.change.status');
             Route::post('/posts/bulk-status', [PostController::class, 'bulkStatus'])->name('posts.bulk.status');
+            //Upload Tinymce
+            Route::post('posts/upload/image', [PostController::class, 'upLoadFileImage'])->name('posts.upload.image');
 
             Route::get('/taxons/search', TaxonSearchController::class)->name('taxons.search');
         });

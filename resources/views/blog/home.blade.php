@@ -1,5 +1,7 @@
 @extends('layouts.app')
-
+@push('styles')
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+@endpush
 @section('content')
     <main>
         <div class="container">
@@ -76,10 +78,14 @@
                                         </div>
                                         <a href="{{ $post->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                                     </div>
-                                    <div class="sh-section__content">
-                                        <div class="sh-section__image">
-                                            <a href="{{ $post->url() }}"><img src="{{ $post->getFirstMediaUrl('image') ?? '/admin/global_assets/images/placeholders/placeholder.jpg' }}" alt=""></a>
-                                        </div>
+                                    <div class="sh-section__content items">
+                                        @if($post->getMedia()->isNotEmpty())
+                                            @foreach($post->getMedia() as $key => $image)
+                                                <div class="sh-section__image">
+                                                    <a href="{{ $post->url() }}"><img src="{{ $image->getFullUrl() ?? '/admin/global_assets/images/placeholders/placeholder.jpg' }}" alt=""></a>
+                                                </div>
+                                            @endforeach
+                                        @endif
                                     </div>
                                     <div class="sh-section__footer">
                                         <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">  {{ $post->view }}</i></a>
@@ -124,3 +130,22 @@
         </div>
     </footer>
 @endsection
+@push('scripts')
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        function initSlider(){
+            $('.items').slick({
+                dots: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                autoplay: true,
+                prevArrow: '<div class="slick-prev"><i class="fa fa-chevron-left"></i></div>',
+                nextArrow: '<div class="slick-next"><i class="fa fa-chevron-right"></i></div>'
+            });
+        }
+        $(document).ready(function() {
+            initSlider();
+        });
+    </script>
+@endpush

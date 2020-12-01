@@ -1,4 +1,4 @@
-<form action="{{ $url }}" method="POST" data-block enctype="multipart/form-data">
+<form action="{{ $url }}" method="POST" data-block enctype="multipart/form-data" id="post-form">
     @csrf
     @method($method ?? 'POST')
 
@@ -91,6 +91,37 @@
                                             {{ $message }}
                                         </span>
                                         @enderror
+                                    </div>
+                                </div>
+                                <div id="image-input" style="display: none;">
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label text-lg-right" for="Loại thành viên">
+                                            <span class="text-danger">*</span>
+                                            Ảnh :
+                                        </label>
+                                        <div class="col-lg-9">
+                                            <div id="classify-data"></div>
+                                            <div class="m-portlet__body">
+
+                                                <h3 class="m-portlet__head-text">
+                                                    Chỉnh sửa hình ảnh sản phẩm
+                                                </h3>
+                                                <span class="m-form__help">
+                                                    Kéo để sắp xếp lại hình ảnh của bạn
+                                                </span>
+                                                <div class="form-group m-form__group">
+                                                    <div class="wraper-row-store row form-group">
+                                                        <div class="col-lg-12">
+                                                            <div class="m-dropzone dropzone m-dropzone--success" id="post-images">
+                                                                <div class="m-dropzone__msg dz-message needsclick">
+                                                                    <h3 class="m-dropzone__msg-title"> Thêm ảnh</h3>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
 

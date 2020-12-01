@@ -17,8 +17,8 @@
 
     <link rel="stylesheet" href="{{ asset('blog/vendor/css/magnific-popup.css')}}" type="text/css" />
     <link href="{{ asset('blog/css/style.css')}}" rel="stylesheet"/>
-
     <script data-main="js/app" src="{{ asset('blog/vendor/js/jquery/jquery.min.js')}}"></script>
+    @stack('scripts')
     <script data-main="js/app" src="{{ asset('blog/vendor/js/require.js')}}"></script>
 
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -29,6 +29,7 @@
             display: none
         }
     </style>
+    @stack('styles')
 </head>
 <body>
 <!-- HEADER -->
@@ -94,7 +95,6 @@
             require(['modules/upload']);
         });
     </script>
-    @stack('styles')
 </header>
 <script>
     /*----------------------------------------*/
