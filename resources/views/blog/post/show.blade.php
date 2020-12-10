@@ -113,7 +113,7 @@
                                         <a href="{{ $postNew->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                                     </div>
                                     <div class="sh-section__content">
-                                        <p>{{ $postNew->getFirstMediaUrl('file') }}</p>
+                                        <p><a href="{{ $post->getFirstMediaUrl('file') }}" target="_blank">Xem tài liệu</a></p>
                                     </div>
                                     <div class="sh-section__footer">
                                         <a href="{{ $postNew->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">  {{ $postNew->view }}</i></a>
