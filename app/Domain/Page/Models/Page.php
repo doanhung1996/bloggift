@@ -7,6 +7,8 @@ namespace App\Domain\Page\Models;
 use App\Domain\Model;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Support\Facades\Cache;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
 /**
  * App\Domain\Page\Models\Page.
@@ -35,10 +37,10 @@ use Illuminate\Support\Facades\Cache;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Domain\Page\Models\Page whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Page extends Model
+class Page extends Model implements HasMedia
 {
     use Sluggable;
-
+    use InteractsWithMedia;
     public static function boot()
     {
         parent::boot();
@@ -70,5 +72,13 @@ class Page extends Model
     public function urlPage()
     {
         return route('page.show', $this->slug);
+    }
+
+    public function registerMediaCollections(): void
+    {
+        $this
+            ->addMediaCollection('image')
+            ->singleFile()
+            ->useFallbackUrl('/admin/global_assets/images/placeholders/placeholder.jpg');
     }
 }

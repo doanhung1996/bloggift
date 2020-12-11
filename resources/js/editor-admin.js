@@ -27,7 +27,7 @@ tinyMCE.init({
 
         xhr = new XMLHttpRequest();
         xhr.withCredentials = false;
-        xhr.open('POST', '/admin/uploads-tinymce');
+        xhr.open('POST', '/manager/uploads-tinymce');
 
         xhr.onload = function() {
             var json;

@@ -28,7 +28,7 @@
         let maxFileUpload = 9;
         Dropzone.autoDiscover = true;
         Dropzone.options.postImages = {
-            url: '{{ route('admin.posts.upload.image') }}',
+            url: '{{ route('admin.pages.upload.image') }}',
             maxFilesize: 2,
             maxFiles: maxFileUpload,
             addRemoveLinks: true,
@@ -55,8 +55,8 @@
                         myDropzone.removeFile(file);
                     });
                 });
-                    @if($post->getMedia()->isNotEmpty())
-                    @foreach($post->getMedia() as $key => $image)
+                    @if($page->getMedia()->isNotEmpty())
+                    @foreach($page->getMedia() as $key => $image)
                 let mockFile_{{$key}} = { name: '{{ $image->file_name }}', size: '{{ $image->size }}', id: '{{ $image->id }}'};
                 myDropzone.emit("addedfile", mockFile_{{$key}});
                 myDropzone.emit("thumbnail", mockFile_{{$key}}, '{{ $image->getFullUrl() }}');
@@ -64,7 +64,7 @@
                 $('#post-form').append('<input type="hidden" name="images[]" value="{{ $image->id }}">');
                     @endforeach
                     @endif
-                let fileCountOnServer = '{{ $post->getMedia()->count() }}';
+                let fileCountOnServer = '{{ $page->getMedia()->count() }}';
                 myDropzone.options.maxFiles = myDropzone.options.maxFiles - fileCountOnServer;
 
                 myDropzone.on("maxfilesexceeded", function(file) {
