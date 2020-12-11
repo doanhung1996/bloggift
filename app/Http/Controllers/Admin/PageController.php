@@ -7,6 +7,7 @@ use App\Domain\Page\Models\Page;
 use App\Http\Requests\Admin\PageRequest;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\View\View;
 
 class PageController
@@ -70,6 +71,33 @@ class PageController
         return response()->json([
             'status' => true,
             'message' => __('Cập nhật trạng thái thành công !'),
+        ]);
+    }
+
+    public function upLoadFileImage(Request $request)
+    {
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'file' => ['mimes:jpeg,jpg,png', 'required', 'max:2048'],
+            ],
+            [
+                'file.mimes' => __('File upload is invalid'),
+                'file.max' => __('File too big'),
+            ]
+        );
+
+        if ($validator->fails()) {
+            return response()->json([
+                'error' => $validator->errors()->first('file'),
+            ], \Illuminate\Http\Response::HTTP_UNPROCESSABLE_ENTITY);
+        }
+
+        $file = $request->file('file')->storePublicly('tmp/uploads');
+
+        return response()->json([
+            'file' => $file,
+            'status' => true,
         ]);
     }
 }

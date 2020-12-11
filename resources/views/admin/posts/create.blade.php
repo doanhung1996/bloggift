@@ -47,7 +47,7 @@
         let maxFileUpload = 9;
         Dropzone.autoDiscover = true;
         Dropzone.options.postImages = {
-            url: '{{ route('admin.posts.upload.image') }}',
+            url: '{{ route('admin.pages.upload.image') }}',
             maxFilesize: 2,
             maxFiles: maxFileUpload,
             addRemoveLinks: true,

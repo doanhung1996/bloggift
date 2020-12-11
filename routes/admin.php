@@ -119,7 +119,8 @@ Route::prefix('manager')->name('admin.')->group(function () {
             Route::delete('/pages/{page}', [PageController::class, 'destroy'])->name('pages.destroy');
             Route::put('/pages/{page}', [PageController::class, 'update'])->name('pages.update');
             Route::post('/pages/{page}/status', [PageController::class, 'changeStatus'])->name('pages.change.status');
-
+            //Upload Tinymce
+            Route::post('pages/upload/image', [PageController::class, 'upLoadFileImage'])->name('pages.upload.image');
             // POST
             Route::post('/posts/bulk-delete', [PostController::class, 'bulkDelete'])->name('posts.bulk-delete');
             Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
