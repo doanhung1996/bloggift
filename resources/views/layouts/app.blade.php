@@ -30,9 +30,9 @@
             display: none
         }
 
-        #list-post{
-            display: table-row;
-        }
+        /*#list-post{*/
+        /*    display: table-row;*/
+        /*}*/
     </style>
     @stack('styles')
 </head>
