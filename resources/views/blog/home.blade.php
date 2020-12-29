@@ -1,6 +1,17 @@
 @extends('layouts.app')
 @push('styles')
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <style>
+        .grid-sizer, .sh-section__item {
+            width: 50%;
+            padding: 0px 10px;
+        }
+
+        .sh-section__item img {
+            display: block;
+            max-width: 100%;
+        }
+    </style>
 @endpush
 @section('content')
     <main>
@@ -8,7 +19,8 @@
             <div class="sh-content-head">
                 Đây là trang nhà của Ltr Nguyễn Hoàng Phương.
             </div>
-            <div class="sh-section__wrap row" id="list-post">
+            <div class="sh-section__wrap" id="list-post">
+                <div class="grid-sizer"></div>
                 @if($posts->count() == 0)
                     <div class="text-center col-12">
                         <p>Chưa có bài viết !</p>
@@ -16,7 +28,7 @@
                 @else
                     @foreach($posts as $post)
                         @if($post->type == \App\Enums\TypePost::VIDEO)
-                            <div class="sh-section__item col-lg-6">
+                            <div class="sh-section__item">
                                 <div class="sh-section">
                                     <div class="sh-section__head">
                                         <a href="#" class="sh-section__avatar sh-avatar"><img src="/blog/images/avatars/avatar-06.png" alt=""></a>
@@ -48,7 +60,7 @@
                                 </div>
                             </div>
                         @elseif($post->type == \App\Enums\TypePost::TEXT)
-                            <div class="sh-section__item col-lg-6">
+                            <div class="sh-section__item">
                                 <div class="sh-section">
                                     <div class="sh-section__head">
                                         <div>
@@ -69,7 +81,7 @@
                                 </div>
                             </div>
                         @elseif($post->type == \App\Enums\TypePost::IMAGE)
-                            <div class="sh-section__item col-lg-6">
+                            <div class="sh-section__item">
                                 <div class="sh-section">
                                     <div class="sh-section__head">
                                         <div>
@@ -93,7 +105,7 @@
                                 </div>
                             </div>
                         @elseif($post->type == \App\Enums\TypePost::FILE)
-                            <div class="sh-section__item col-lg-6">
+                            <div class="sh-section__item">
                                 <div class="sh-section">
                                     <div class="sh-section__head">
                                         <div>
@@ -147,5 +159,20 @@
         $(document).ready(function() {
             initSlider();
         });
+    </script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var $grid = $('#list-post').masonry({
+                // options
+                itemSelector: '.sh-section__item',
+                percentPosition: true,
+                columnWidth: '.grid-sizer'
+            });
+        });
+
+        // $grid.imagesLoaded().progress( function() {
+        //     $grid.masonry();
+        // });
     </script>
 @endpush
