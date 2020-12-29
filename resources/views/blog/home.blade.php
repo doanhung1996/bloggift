@@ -160,19 +160,4 @@
             initSlider();
         });
     </script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            var $grid = $('#list-post').masonry({
-                // options
-                itemSelector: '.sh-section__item',
-                percentPosition: true,
-                columnWidth: '.grid-sizer'
-            });
-        });
-
-        // $grid.imagesLoaded().progress( function() {
-        //     $grid.masonry();
-        // });
-    </script>
 @endpush

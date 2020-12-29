@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="{{ asset('blog/vendor/css/magnific-popup.css')}}" type="text/css" />
     <link href="{{ asset('blog/css/style.css')}}" rel="stylesheet"/>
     <script data-main="js/app" src="{{ asset('blog/vendor/js/jquery/jquery.min.js')}}"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
     @stack('scripts')
     <script data-main="js/app" src="{{ asset('blog/vendor/js/require.js')}}"></script>
 
@@ -103,6 +104,13 @@
     var pagePost = 1,
         finalPagePost = false ;
     $(document).ready(function() {
+        var $grid = $('#list-post').masonry({
+            // options
+            itemSelector: '.sh-section__item',
+            percentPosition: true,
+            columnWidth: '.grid-sizer'
+        });
+
         $(document).on('click', '#load-more',function (e) {
             e.preventDefault();
             var url = $(this).data('url');
@@ -122,10 +130,10 @@
                         $this.removeClass('btn-loading');
                         $this.removeAttr('disabled', true);
                         $this.removeData("loading");
-                        var $data = $(data.view);
-                        $data.hide();
-                        $('#list-post').append($data);
-                        $data.fadeIn();
+                        if (data.view.length > 0) {
+                            var $elems = $( data.view );
+                            $grid.append( $elems ).masonry( 'appended', $elems ).masonry('reloadItems');
+                        }
                         if (data.is_last_page_post == true) {
                             finalPagePost = true;
                             $('#load-more').addClass('hide');

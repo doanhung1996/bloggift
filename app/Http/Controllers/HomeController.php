@@ -28,20 +28,20 @@ class HomeController extends Controller
             $posts = Post::where('title', 'like', request('q')."%")->where('status', StatusPost::Active)->latest()->limit(1)->get();
             return view('blog.home', compact('posts'));
         }
-        $posts = Post::where('status', StatusPost::Active)->latest()->limit(10)->get();
+        $posts = Post::where('status', StatusPost::Active)->latest()->limit(2)->get();
         return view('blog.home', compact('posts'));
     }
 
     public function loadMore()
     {
         if (request('q')){
-            $posts = Post::where('title', 'like', request('q')."%")->where('status', StatusPost::Active)->paginate(10);
+            $posts = Post::where('title', 'like', request('q')."%")->where('status', StatusPost::Active)->paginate(2);
             return response()->json([
                 'view' => view('blog.load_more', compact('posts'))->render(),
                 'is_last_page_post' => $posts->lastPage() == request('page') || $posts->lastPage() < request('page') ? true : false
             ]);
         }
-        $posts = Post::where('status', StatusPost::Active)->paginate(10);
+        $posts = Post::where('status', StatusPost::Active)->paginate(2);
         return response()->json([
             'view' => view('blog.load_more', compact('posts'))->render(),
             'is_last_page_post' => $posts->lastPage() == request('page') || $posts->lastPage() < request('page') ? true : false

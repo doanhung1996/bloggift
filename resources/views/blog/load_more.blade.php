@@ -1,6 +1,6 @@
 @foreach($posts as $post)
     @if($post->type == \App\Enums\TypePost::VIDEO)
-        <div class="sh-section__item col-lg-6">
+        <div class="sh-section__item">
             <div class="sh-section">
                 <div class="sh-section__head">
                     <a href="#" class="sh-section__avatar sh-avatar"><img src="/blog/images/avatars/avatar-06.png" alt=""></a>
@@ -32,7 +32,7 @@
             </div>
         </div>
     @elseif($post->type == \App\Enums\TypePost::TEXT)
-        <div class="sh-section__item col-lg-6">
+        <div class="sh-section__item">
             <div class="sh-section">
                 <div class="sh-section__head">
                     <div>
@@ -50,7 +50,7 @@
             </div>
         </div>
     @elseif($post->type == \App\Enums\TypePost::IMAGE)
-        <div class="sh-section__item col-lg-6">
+        <div class="sh-section__item">
             <div class="sh-section">
                 <div class="sh-section__head">
                     <div>
@@ -70,7 +70,7 @@
             </div>
         </div>
     @elseif($post->type == \App\Enums\TypePost::FILE)
-        <div class="sh-section__item col-lg-6">
+        <div class="sh-section__item">
             <div class="sh-section">
                 <div class="sh-section__head">
                     <div>
