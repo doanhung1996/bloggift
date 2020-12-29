@@ -7,6 +7,13 @@
             padding: 0px 10px;
         }
 
+        @media only screen and (max-width: 600px) {
+            .grid-sizer, .sh-section__item {
+                width: 100%;
+                padding: 0px 10px;
+            }
+        }
+
         .sh-section__item img {
             display: block;
             max-width: 100%;
