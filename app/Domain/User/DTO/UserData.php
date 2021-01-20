@@ -20,7 +20,7 @@ class UserData extends DataTransferObject
         return new self([
             'name' => $request->input('name'),
             'email' => $request->input('email'),
-            'password' => $request->input('new_password')
+            'password' => $request->input('password')
         ]);
     }
 }

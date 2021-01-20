@@ -3,7 +3,7 @@
 namespace App\DataTables;
 
 use App\DataTables\Core\BaseDatable;
-use App\Domain\User\Models\User;
+use App\User;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
 

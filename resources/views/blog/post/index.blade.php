@@ -107,6 +107,27 @@
                                     </div>
                                 </div>
                             </div>
+                        @elseif($post->type == \App\Enums\TypePost::LESSON)
+                            <div class="sh-section__item col-lg-6">
+                                <div class="sh-section">
+                                    <div class="sh-section__head">
+                                        <a href="#" class="sh-section__avatar sh-avatar"><img src="/blog/images/avatars/avatar-06.png" alt=""></a>
+                                        <div>
+                                            <a href="{{ $post->url() }}" class="sh-section__name">{{ $post->title }}</a>
+                                            <span class="sh-section__passed">{{ $post->created_at->diffForHumans() }}</span>
+                                        </div>
+                                        <a href="{{ $post->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
+                                    </div>
+                                    <div class="sh-section__content">
+                                        <div class="sh-section__image">
+                                            <a href="{{ $post->url() }}"><img src="{{ $post->getFirstMediaUrl('image') ?? '/admin/global_assets/images/placeholders/placeholder.jpg' }}" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <div class="sh-section__footer">
+                                        <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">  {{ $post->view }}</i></a>
+                                    </div>
+                                </div>
+                            </div>
                         @endif
                     @endforeach
                 @endif

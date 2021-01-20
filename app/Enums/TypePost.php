@@ -16,4 +16,5 @@ final class TypePost extends Enum
     const VIDEO = 'video';
     const IMAGE = 'image';
     const FILE = 'file';
+    const LESSON = 'lesson';
 }

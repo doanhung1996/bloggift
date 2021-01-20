@@ -85,6 +85,7 @@
                                             <option value="{{ \App\Enums\TypePost::VIDEO }}" @if(old('type') == \App\Enums\TypePost::VIDEO) {{ 'selected' }} @elseif($post->type == \App\Enums\TypePost::VIDEO) {{ 'selected' }} @endif>Video</option>
                                             <option value="{{ \App\Enums\TypePost::FILE }}" @if(old('type') == \App\Enums\TypePost::FILE) {{ 'selected' }} @elseif($post->type == \App\Enums\TypePost::FILE) {{ 'selected' }} @endif>File</option>
                                             <option value="{{ \App\Enums\TypePost::IMAGE }}" @if(old('type') == \App\Enums\TypePost::IMAGE) {{ 'selected' }} @elseif($post->type == \App\Enums\TypePost::IMAGE) {{ 'selected' }} @endif>Image</option>
+                                            <option value="{{ \App\Enums\TypePost::LESSON }}" @if(old('type') == \App\Enums\TypePost::LESSON) {{ 'selected' }} @elseif($post->type == \App\Enums\TypePost::LESSON) {{ 'selected' }} @endif>Bài Học</option>
                                         </select>
                                         @error('type')
                                         <span class="form-text text-danger">
@@ -139,8 +140,8 @@
                                 <div id="video-input" style="display: none;">
                                     <x-text-field
                                         name="video"
-                                        :placeholder="__('Link Youtube')"
-                                        :label="__('Link Youtube')"
+                                        :placeholder="__('Đường dẫn')"
+                                        :label="__('Đường dẫn')"
                                         :value="$post->video"
                                     >
                                     </x-text-field>
@@ -317,6 +318,11 @@
                 $('#text-input').css('display', 'none');
                 $('#image-input').css('display', 'none');
                 $('#file-input').css('display', 'block');
+            }else if(type == '{{\App\Enums\TypePost::LESSON}}'){
+                $('#video-input').css('display', 'block');
+                $('#text-input').css('display', 'none');
+                $('#image-input').css('display', 'none');
+                $('#file-input').css('display', 'none');
             }
         }
 

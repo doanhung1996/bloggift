@@ -7,5 +7,7 @@
         <span>Nội dung</span>
     @elseif($post->type == \App\Enums\TypePost::IMAGE)
         <span>Ảnh</span>
+    @elseif($post->type == \App\Enums\TypePost::LESSON)
+        <span>Bài Học</span>
     @endif
 </div>

@@ -9,7 +9,7 @@ use App\Domain\Page\Models\Page;
 use App\Domain\Post\Models\Post;
 use App\Domain\Taxonomy\Models\Taxon;
 use App\Domain\Taxonomy\Models\Taxonomy;
-use App\Domain\User\Models\User;
+use App\User;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator;
 use DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs;
 

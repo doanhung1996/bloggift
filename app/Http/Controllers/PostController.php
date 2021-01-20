@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Domain\Post\Models\Post;
 use App\Domain\Taxonomy\Models\Taxon;
 use App\Enums\StatusPost;
+use App\Enums\TypePost;
 
 class PostController extends Controller
 {
@@ -25,6 +26,12 @@ class PostController extends Controller
     public function show(Post $post)
     {
         $postNews = Post::where('status', StatusPost::Active)->take(4)->get();
+        if ($post->type == TypePost::LESSON){
+            if (auth('web')->check()){
+                return view('blog.post.show_lesson', compact('post', 'postNews'));
+            }
+                return redirect()->guest('login');
+        }
         return view('blog.post.show', compact('post', 'postNews'));
     }
 

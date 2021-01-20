@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Admin;
 
-use App\Domain\User\Models\User;
+use App\User;
 use App\Http\Requests\User\UserBulkDeleteRequest;
 use App\Http\Requests\User\UserRequest;
 use App\DataTables\UserDataTable;
