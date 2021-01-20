@@ -7,7 +7,7 @@ namespace App\Domain\Taxonomy\Models;
 use App\Domain\Model;
 use App\Domain\Post\Models\Post;
 use App\Support\Traits\IsSorted;
-use Cache;
+use Illuminate\Support\Facades\Cache;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Spatie\MediaLibrary\HasMedia;
@@ -77,7 +77,12 @@ class Taxon extends Model implements HasMedia
     protected static function boot()
     {
         parent::boot();
-
+        static::saved(function ($taxon) {
+            Cache::forget('taxon-menu');
+        });
+        static::deleted(function ($taxon) {
+            Cache::forget('taxon-menu');
+        });
     }
 
     public function childs()
