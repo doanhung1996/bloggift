@@ -70,4 +70,5 @@ class TaxonomyDataTable extends BaseDatable
     {
         return 'Taxonomy_'.date('YmdHis');
     }
+
 }

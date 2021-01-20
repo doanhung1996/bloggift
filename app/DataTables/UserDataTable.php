@@ -3,12 +3,11 @@
 namespace App\DataTables;
 
 use App\DataTables\Core\BaseDatable;
-use App\Domain\Acl\Models\Role;
-use Illuminate\Database\Eloquent\Builder;
+use App\Domain\User\Models\User;
 use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
 
-class RoleDataTable extends BaseDatable
+class UserDataTable extends BaseDatable
 {
     /**
      * Build DataTable class.
@@ -21,32 +20,37 @@ class RoleDataTable extends BaseDatable
         return datatables()
             ->eloquent($query)
             ->addIndexColumn()
-            ->editColumn('created_at', fn(Role $admin) => formatDate($admin->created_at))
-            ->editColumn('updated_at', fn(Role $admin) => formatDate($admin->updated_at))
-            ->orderColumn('display_name', function ($query, $order) {
-                $query->orderByTranslation('display_name', $order);
-            })
-            ->filterColumn('display_name', function($query, $keyword) {
-                $query->whereTranslationLike('display_name', "%{$keyword}%");
-            })
-            ->addColumn('action', 'admin.roles._tableAction');
+            ->addColumn('full_name', fn (User $user) => view('admin.users._tableFullName', compact('user')))
+            ->editColumn('created_at', fn (User $user) => formatDate($user->created_at))
+            ->editColumn('updated_at', fn (User $user) => formatDate($user->updated_at))
+            ->orderColumn('full_name',
+                fn($query, $direction) => $query->orderByRaw("CONCAT(first_name, ' ', last_name) $direction")
+            )
+            ->addColumn('action', 'admin.users._tableAction');
     }
 
-    public function query(Role $model): Builder
+    /**
+     * Get query source of dataTable.
+     *
+     * @param \App\User $model
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function query(User $model)
     {
-        return $model->newQuery()->with('translation');
+        return $model->newQuery();
     }
 
     protected function getColumns(): array
     {
         return [
             Column::checkbox(''),
-            Column::make('id')->title(__('Index'))->data('DT_RowIndex')->searchable(false),
-            Column::make('translation.display_name')->name('display_name')->title(__('Tên')),
+            Column::make('id')->title(__('STT'))->data('DT_RowIndex')->searchable(false),
+            Column::make('full_name')->title(__('Tên')),
+            Column::make('email')->title(__('Email')),
             Column::make('created_at')->title(__('Thời gian tạo'))->searchable(false),
             Column::make('updated_at')->title(__('Thời gian cập nhật'))->searchable(false),
             Column::computed('action')
-                ->title(__('Action'))
+                ->title(__('Tác vụ'))
                 ->exportable(false)
                 ->printable(false)
                 ->width(60)
@@ -57,7 +61,7 @@ class RoleDataTable extends BaseDatable
     protected function getBuilderParameters(): array
     {
         return [
-            'order' => [3, 'desc'],
+            'order' => [5, 'desc'],
         ];
     }
 
@@ -68,7 +72,7 @@ class RoleDataTable extends BaseDatable
      */
     protected function filename(): string
     {
-        return 'Role_'.date('YmdHis');
+        return 'User_'.date('YmdHis');
     }
 
     protected function getTableButton(): array

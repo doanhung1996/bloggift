@@ -8,8 +8,8 @@ use App\Http\Requests\Admin\AdminBulkDeleteRequest;
 use App\Http\Requests\Admin\AdminRequest;
 use App\DataTables\AdminDataTable;
 use App\Domain\Acl\Models\Role;
-use App\Domain\Admin\Actions\AdminCreateAction;
-use App\Domain\Admin\Actions\AdminUpdateAction;
+use App\Domain\Admin\Actions\UserCreateAction;
+use App\Domain\Admin\Actions\UserUpdateAction;
 use App\Domain\Admin\Actions\BulkDeleteAction;
 use App\Domain\Admin\DTO\AdminData;
 use App\Domain\Admin\Models\Admin;
@@ -38,7 +38,7 @@ class AdminController
         return view('admin.admins.create', compact('roles'));
     }
 
-    public function store(AdminRequest $request, AdminCreateAction $action): RedirectResponse
+    public function store(AdminRequest $request, UserCreateAction $action): RedirectResponse
     {
         $this->authorize('create', Admin::class);
 
@@ -60,7 +60,7 @@ class AdminController
         return view('admin.admins.edit', compact('admin', 'roles'));
     }
 
-    public function update(Admin $admin, AdminRequest $request, AdminUpdateAction $action): RedirectResponse
+    public function update(Admin $admin, AdminRequest $request, UserUpdateAction $action): RedirectResponse
     {
         $this->authorize('update', $admin);
 

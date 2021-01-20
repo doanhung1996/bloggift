@@ -35,6 +35,7 @@ use App\Http\Controllers\Admin\TaxonTreeController;
 use App\Http\Controllers\Admin\TopReferrerController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\UploadTinymceController;
+use App\Http\Controllers\Admin\UserController;
 
 Route::prefix('manager')->name('admin.')->group(function () {
     Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
@@ -135,5 +136,14 @@ Route::prefix('manager')->name('admin.')->group(function () {
             Route::post('posts/upload/image', [PostController::class, 'upLoadFileImage'])->name('posts.upload.image');
 
             Route::get('/taxons/search', TaxonSearchController::class)->name('taxons.search');
+
+            //User
+            Route::post('/users/bulk-delete', [UserController::class, 'bulkDelete'])->name('users.bulk-delete');
+            Route::get('/users', [UserController::class, 'index'])->name('users.index');
+            Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+            Route::post('/users', [UserController::class, 'store'])->name('users.store');
+            Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+            Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
+            Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
         });
 });

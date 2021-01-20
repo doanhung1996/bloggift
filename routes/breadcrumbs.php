@@ -9,6 +9,7 @@ use App\Domain\Page\Models\Page;
 use App\Domain\Post\Models\Post;
 use App\Domain\Taxonomy\Models\Taxon;
 use App\Domain\Taxonomy\Models\Taxonomy;
+use App\Domain\User\Models\User;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator;
 use DaveJamesMiller\Breadcrumbs\Facades\Breadcrumbs;
 
@@ -145,4 +146,25 @@ Breadcrumbs::for('admin.pages.edit', function (BreadcrumbsGenerator $trail, Page
 Breadcrumbs::for('admin.pages.update', function (BreadcrumbsGenerator $trail, Page $page) {
     $trail->parent('admin.pages.index');
     $trail->push(__('Update'), route('admin.pages.update', $page));
+});
+
+
+// Home > Users
+Breadcrumbs::for('admin.users.index', function (BreadcrumbsGenerator $trail) {
+    $trail->parent('admin.dashboard');
+    $trail->push(__('Tài khoản'), route('admin.users.index'), ['icon' => 'icon-people']);
+});
+
+// Home > Users > Create
+
+Breadcrumbs::for('admin.users.create', function (BreadcrumbsGenerator $trail) {
+    $trail->parent('admin.users.index');
+    $trail->push(__('Tạo'), route('admin.users.create'));
+});
+
+// Home > Users > [user] > Edit
+Breadcrumbs::for('admin.users.edit', function (BreadcrumbsGenerator $trail, User $user) {
+    $trail->parent('admin.users.index');
+    $trail->push($user->email, '#');
+    $trail->push(__('Chỉnh sửa'), route('admin.users.edit', $user));
 });

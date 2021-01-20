@@ -4,6 +4,7 @@ namespace App\DataTables;
 
 use App\DataTables\Core\BaseDatable;
 use App\Domain\Admin\Models\Admin;
+use Yajra\DataTables\Html\Button;
 use Yajra\DataTables\Html\Column;
 
 class AdminDataTable extends BaseDatable
@@ -73,4 +74,17 @@ class AdminDataTable extends BaseDatable
     {
         return 'Admin_'.date('YmdHis');
     }
+
+    protected function getTableButton(): array
+    {
+        return [
+            Button::make('bulkDelete')->addClass('btn bg-danger')->text('<i class="icon-trash mr-2"></i>'.__('Xóa')),
+            Button::make('selectAll')->addClass('btn bg-blue')->text(__('Chọn tất cả')),
+            Button::make('export')->addClass('btn btn-light')->text('<i class="icon-download mr-2"></i>'.__('Xuất')),
+            Button::make('print')->addClass('btn btn-light')->text('<i class="icon-printer mr-2"></i>'.__('In')),
+            Button::make('reset')->addClass('btn btn-light')->text('<i class="icon-reset mr-2"></i>'.__('Thiết lập lại')),
+            Button::make('create')->addClass('btn btn-success')->text('<i class="icon-plus-circle2 mr-2"></i>'.__('Tạo mới')),
+        ];
+    }
+
 }

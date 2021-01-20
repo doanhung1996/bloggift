@@ -96,6 +96,15 @@
                         </span>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('admin.users.index') }}" class="nav-link {{ request()->routeIs('admin.users*') ? 'active' : null }}">
+                        <i class="icon-user"></i>
+                        <span>
+                            {{ __('Danh sách người dùng') }}
+                        </span>
+                    </a>
+                </li>
                 <!-- System -->
                 <li class="nav-item-header"><div class="text-uppercase font-size-xs line-height-xs">{{ __('Hệ thống') }}</div> <i class="icon-menu" title="{{ __('Hệ thống') }}"></i></li>
                 <li class="nav-item nav-item-submenu {{ request()->routeIs('admin.admins*') || request()->routeIs('admin.roles*') ? 'nav-item-expanded nav-item-open' : null }}">
