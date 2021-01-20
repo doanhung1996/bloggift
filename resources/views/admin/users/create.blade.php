@@ -13,7 +13,7 @@
 @section('page-content')
     @include('admin.users._form', [
         'url' =>  route('admin.users.store'),
-        'user' => new \App\Domain\User\Models\User,
+        'user' => new \App\User,
     ])
 @stop
 

@@ -14,7 +14,7 @@
 @section('page-content')
     @include('admin.users._form', [
         'url' =>  route('admin.users.update', $user),
-        'user' => $user ?? new \App\Domain\User\Models\User,
+        'user' => $user ?? new \App\User,
         'method' => 'PUT'
     ])
 @stop
