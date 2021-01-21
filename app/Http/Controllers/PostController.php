@@ -26,6 +26,7 @@ class PostController extends Controller
     public function show(Post $post)
     {
         $postNews = Post::where('status', StatusPost::Active)->take(4)->get();
+        $post->increment('view');
         if ($post->type == TypePost::LESSON){
             if (auth('web')->check()){
                 return view('blog.post.show_lesson', compact('post', 'postNews'));

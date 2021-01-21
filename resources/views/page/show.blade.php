@@ -10,9 +10,8 @@
                     <div class="sh-section">
                         <div class="sh-section__head">
                             <div>
-                                <a href="#" class="sh-section__name">{{ $page->title }}</a>
+                                <a href="javascript:void(0)" class="sh-section__name">{{ $page->title }}</a>
                             </div>
-                            <a href="#" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                         </div>
                         <div class="sh-section__content">
                             <div style="padding-top: 15px">

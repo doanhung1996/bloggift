@@ -27,7 +27,7 @@
                     </script>
                 </div>
                 <div class="sh-section__footer">
-                    <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">  {{ $post->view }}</i></a>
+                   <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem">{{ $post->view }} lượt xem</a>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
                     <div>{!! $post->text !!}</div>
                 </div>
                 <div class="sh-section__footer">
-                    <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">  {{ $post->view }}</i></a>
+                   <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem">{{ $post->view }} lượt xem</a>
                 </div>
             </div>
         </div>
@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="sh-section__footer">
-                    <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">  {{ $post->view }}</i></a>
+                   <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem">{{ $post->view }} lượt xem</a>
                 </div>
             </div>
         </div>
@@ -83,7 +83,7 @@
                     <p><a href="{{ $post->getFirstMediaUrl('file') }}" target="_blank">Xem tài liệu</a></p>
                 </div>
                 <div class="sh-section__footer">
-                    <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">  {{ $post->view }}</i></a>
+                   <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem">{{ $post->view }} lượt xem</a>
                 </div>
             </div>
         </div>

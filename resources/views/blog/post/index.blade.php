@@ -22,7 +22,7 @@
                                             <a href="{{ $post->url() }}" class="sh-section__name">{{ $post->title }}</a>
                                             <span class="sh-section__passed">{{ $post->created_at->diffForHumans() }}</span>
                                         </div>
-                                        <a href="{{ $post->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
+
                                     </div>
                                     <div class="sh-section__content">
                                         <div class="sh-section__media sh-video">
@@ -41,7 +41,7 @@
                                         </script>
                                     </div>
                                     <div class="sh-section__footer">
-                                        <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">  {{ $post->view }}</i></a>
+                                       <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem">{{ $post->view }} lượt xem</a>
                                     </div>
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                                             <a href="{{ $post->url() }}" class="sh-section__name">{{ $post->title }}</a>
                                             <span class="sh-section__passed">{{ $post->created_at->diffForHumans() }}</span>
                                         </div>
-                                        <a href="{{ $post->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
+
                                     </div>
                                     <div class="sh-section__content">
                                         <div class="sh-section__image">
@@ -62,7 +62,7 @@
                                         <div>{!! $post->text !!}</div>
                                     </div>
                                     <div class="sh-section__footer">
-                                        <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">  {{ $post->view }}</i></a>
+                                       <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem">{{ $post->view }} lượt xem</a>
                                     </div>
                                 </div>
                             </div>
@@ -74,7 +74,7 @@
                                             <a href="{{ $post->url() }}" class="sh-section__name">{{ $post->title }}</a>
                                             <span class="sh-section__passed">{{ $post->created_at->diffForHumans() }}</span>
                                         </div>
-                                        <a href="{{ $post->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
+
                                     </div>
                                     <div class="sh-section__content">
                                         <div class="sh-section__image">
@@ -82,7 +82,7 @@
                                         </div>
                                     </div>
                                     <div class="sh-section__footer">
-                                        <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">  {{ $post->view }}</i></a>
+                                       <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem">{{ $post->view }} lượt xem</a>
                                     </div>
                                 </div>
                             </div>
@@ -94,7 +94,7 @@
                                             <a href="{{ $post->url() }}" class="sh-section__name">{{ $post->title }}</a>
                                             <span class="sh-section__passed">{{ $post->created_at->diffForHumans() }}</span>
                                         </div>
-                                        <a href="{{ $post->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
+
                                     </div>
                                     <div class="sh-section__content">
                                         <div class="sh-section__image">
@@ -103,7 +103,7 @@
                                         <p><a href="{{ $post->getFirstMediaUrl('file') }}" target="_blank">Xem tài liệu</a></p>
                                     </div>
                                     <div class="sh-section__footer">
-                                        <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">  {{ $post->view }}</i></a>
+                                       <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem">{{ $post->view }} lượt xem</a>
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +116,7 @@
                                             <a href="{{ $post->url() }}" class="sh-section__name">{{ $post->title }}</a>
                                             <span class="sh-section__passed">{{ $post->created_at->diffForHumans() }}</span>
                                         </div>
-                                        <a href="{{ $post->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
+
                                     </div>
                                     <div class="sh-section__content">
                                         <div class="sh-section__image">
@@ -124,7 +124,7 @@
                                         </div>
                                     </div>
                                     <div class="sh-section__footer">
-                                        <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">  {{ $post->view }}</i></a>
+                                       <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem">{{ $post->view }} lượt xem</a>
                                     </div>
                                 </div>
                             </div>

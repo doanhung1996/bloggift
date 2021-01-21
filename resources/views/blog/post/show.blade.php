@@ -25,7 +25,6 @@
                                 <a href="{{ $post->url() }}" class="sh-section__name">{{ $post->title }}</a>
                                 <span class="sh-section__passed">{{ $post->created_at->diffForHumans() }}</span>
                             </div>
-                            <a href="#" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
                         </div>
                         <div class="sh-section__content">
                             <div>
@@ -46,7 +45,7 @@
                                             <a href="{{ $postNew->url() }}" class="sh-section__name">{{ $postNew->title }}</a>
                                             <span class="sh-section__passed">{{ $postNew->created_at->diffForHumans() }}</span>
                                         </div>
-                                        <a href="{{ $postNew->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
+
                                     </div>
                                     <div class="sh-section__content">
 {{--                                        <small>{!! $postNew->description !!}</small>--}}
@@ -66,7 +65,7 @@
                                         </script>
                                     </div>
                                     <div class="sh-section__footer">
-                                        <a href="{{ $postNew->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">  {{ $postNew->view }}</i></a>
+                                        <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem">{{ $post->view }} lượt xem</a>
                                     </div>
                                 </div>
                             @elseif($postNew->type == \App\Enums\TypePost::TEXT)
@@ -76,13 +75,13 @@
                                             <a href="{{ $postNew->url() }}" class="sh-section__name">{{ $postNew->title }}</a>
                                             <span class="sh-section__passed">{{ $postNew->created_at->diffForHumans() }}</span>
                                         </div>
-                                        <a href="{{ $postNew->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
+
                                     </div>
                                     <div class="sh-section__content">
                                         <p>{!! $postNew->text !!}</p>
                                     </div>
                                     <div class="sh-section__footer">
-                                        <a href="{{ $postNew->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">  {{ $postNew->view }}</i></a>
+                                        <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem">{{ $post->view }} lượt xem</a>
                                     </div>
                                 </div>
                             @elseif($postNew->type == \App\Enums\TypePost::IMAGE)
@@ -92,7 +91,7 @@
                                             <a href="{{ $postNew->url() }}" class="sh-section__name">{{ $postNew->title }}</a>
                                             <span class="sh-section__passed">{{ $postNew->created_at->diffForHumans() }}</span>
                                         </div>
-                                        <a href="{{ $postNew->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
+
                                     </div>
                                     <div class="sh-section__content">
                                         <div class="sh-section__image">
@@ -100,7 +99,7 @@
                                         </div>
                                     </div>
                                     <div class="sh-section__footer">
-                                        <a href="{{ $postNew->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">  {{ $postNew->view }}</i></a>
+                                        <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem">{{ $post->view }} lượt xem</a>
                                     </div>
                                 </div>
                             @elseif($postNew->type == \App\Enums\TypePost::FILE)
@@ -110,13 +109,13 @@
                                             <a href="{{ $postNew->url() }}" class="sh-section__name">{{ $postNew->title }}</a>
                                             <span class="sh-section__passed">{{ $postNew->created_at->diffForHumans() }}</span>
                                         </div>
-                                        <a href="{{ $postNew->url() }}" class="sh-section__link sh-btn-icon"><i class="icon-Link"></i></a>
+
                                     </div>
                                     <div class="sh-section__content">
                                         <p><a href="{{ $post->getFirstMediaUrl('file') }}" target="_blank">Xem tài liệu</a></p>
                                     </div>
                                     <div class="sh-section__footer">
-                                        <a href="{{ $postNew->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem"><i class="icon-Share">  {{ $postNew->view }}</i></a>
+                                        <a href="{{ $post->url() }}" class="sh-section__btn-stat sh-btn-icon" title="Lượt xem">{{ $post->view }} lượt xem</a>
                                     </div>
                                 </div>
                             @endif
